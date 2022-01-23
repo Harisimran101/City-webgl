@@ -73,7 +73,8 @@ let percentage;
 			},
 			 function(loading){
 				percentage = loading.loaded / loading.total * 100 ;
-			   progress.innerHTML = percentage;
+				console.log(percentage);
+			   progress.innerText = percentage;
 			 }
 			);
 
