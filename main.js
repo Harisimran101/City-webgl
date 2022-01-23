@@ -7,7 +7,7 @@ console.log(FirstPersonControls);
 const webgl = document.querySelector('#webgl');
 const progress = document.querySelector('#progress');
 const fullscreen = document.querySelector('.fullscreen-btn');
-const fullicon = document.querySelector('screenicon')
+const fullicon = document.querySelector('#screenicon')
 const width = webgl.offsetWidth;
 const height = webgl.offsetHeight;
 
@@ -16,16 +16,20 @@ console.log(fullicon);
 
 const clock = new THREE.Clock();
 
-fullscreen.addEventListener('click', () =>{
-	if(fullpage.requestFullscreen != true){
+fullicon.addEventListener('click', () =>{
 	fullpage.requestFullscreen();
-	fullicon.classList.replace('fa-expand', 'fa-compress');  
-	}
-
-	else {
-        
-	}
 });
+
+window.addEventListener('fullscreenchange', () =>{
+	if(fullpage.requestFullscreen = true){
+	
+	fullicon.classList.remove('fa-expand');  
+	fullicon.classList.add('fa-compress');  
+	}
+ 
+});
+
+
 
 //-- Scene
     		const scene = new THREE.Scene();
