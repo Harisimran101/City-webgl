@@ -58,6 +58,10 @@ window.addEventListener('resize', () =>{
 const light = new THREE.HemisphereLight( '#F7F7F7', '#F7F7F7', 1.5);
 scene.add( light );
 
+const directionalLight = new THREE.DirectionalLight( 0xffffff, 1 );
+scene.add( directionalLight );
+directionalLight.position.set(0,4,0);
+
 //-- Objects 
 let percentage;
 
