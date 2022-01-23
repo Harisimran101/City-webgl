@@ -1,11 +1,15 @@
 import { RGBELoader } from 'https://threejs.org/examples/jsm/loaders/RGBELoader.js';
 import { RoomEnvironment  } from 'https://threejs.org/examples/jsm/environments/RoomEnvironment.js';
+import { FirstPersonControls } from 'https://threejs.org/examples/jsm/controls/FirstPersonControls.js';
+
+console.log(FirstPersonControls);
 
 const webgl = document.querySelector('#webgl');
 const progress = document.querySelector('#progress');
 const width = webgl.offsetWidth;
 const height = webgl.offsetHeight;
 
+const clock = new THREE.Clock();
 
 
 //-- Scene
@@ -48,10 +52,13 @@ window.addEventListener('resize', () =>{
 			};
 
 //-- Orbit-Controls			
-			const controls = new THREE.OrbitControls( camera, renderer.domElement );
+			// const controls = new THREE.OrbitControls( camera, renderer.domElement );
 		
 
-	
+			let controls = new FirstPersonControls( camera, renderer.domElement );
+			controls.movementSpeed = 10;
+			controls.lookSpeed = 0.1;
+
 //-- Materials	
 
 //-- Lights 
@@ -76,12 +83,10 @@ let percentage;
                 scene.add(gallery);			  
         
 			});
-
-	console.log(renderer.capabilities.getMaxAnisotropy());
 		
             function render() {
                 requestAnimationFrame(render);
-            
+				controls.update( clock.getDelta() );
                 renderer.render(scene, camera);
                 }
 render();      
