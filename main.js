@@ -20,7 +20,7 @@ const height = webgl.offsetHeight;
 //--Renderer	
 			const renderer = new THREE.WebGLRenderer({ antialias: true, canvas: document.querySelector('#webgl')});
 			renderer.setSize( window.innerWidth,window.innerHeight);
-			renderer.setPixelRatio(window.devicePixelRatio /1.5);
+			renderer.setPixelRatio(window.devicePixelRatio /1.3);
 			renderer.outputEncoding = THREE.sRGBEncoding;
 
 			renderer.shadowMap.enabled = true;
@@ -55,7 +55,7 @@ window.addEventListener('resize', () =>{
 //-- Materials	
 
 //-- Lights 
-const light = new THREE.HemisphereLight( '#F7F7F7', '#F7F7F7', 1 );
+const light = new THREE.HemisphereLight( '#F7F7F7', '#F7F7F7', 1.5);
 scene.add( light );
 
 //-- Objects 
