@@ -17,7 +17,7 @@ const height = webgl.offsetHeight;
 
 //--Renderer	
 			const renderer = new THREE.WebGLRenderer({ antialias: true, canvas: document.querySelector('#webgl')});
-			renderer.setSize( window.innerWidth, window.innerHeight );
+			renderer.setSize( width,height );
 			renderer.setPixelRatio(window.devicePixelRatio /1.3);
 			renderer.outputEncoding = THREE.sRGBEncoding;
 
@@ -38,10 +38,10 @@ window.addEventListener('resize', () =>{
 });
 			function onWindowResize() {
 
-				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.aspect = width / height;
 				camera.updateProjectionMatrix();
 	
-				renderer.setSize( window.innerWidth, window.innerHeight );
+				renderer.setSize( width,height);
 	
 			};
 
