@@ -762,12 +762,13 @@
             "name" : "Traffic light",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
-                    0.800000011920929,
-                    0.800000011920929,
-                    0.800000011920929,
+                    0.22588162124156952,
+                    0.22588162124156952,
+                    0.22588162124156952,
                     1
                 ],
-                "roughnessFactor" : 0.25
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.3627272844314575
             }
         },
         {
