@@ -18,7 +18,7 @@ const height = webgl.offsetHeight;
 //--Renderer	
 			const renderer = new THREE.WebGLRenderer({ antialias: true, canvas: document.querySelector('#webgl')});
 			renderer.setSize( window.innerWidth,window.innerHeight);
-			renderer.setPixelRatio(window.devicePixelRatio /1.3);
+			renderer.setPixelRatio(window.devicePixelRatio /1.5);
 			renderer.outputEncoding = THREE.sRGBEncoding;
 
 			renderer.shadowMap.enabled = true;
