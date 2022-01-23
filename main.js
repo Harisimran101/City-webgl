@@ -73,8 +73,7 @@ let percentage;
 			},
 			 function(loading){
 				percentage = loading.loaded / loading.total * 100 ;
-				console.log(percentage);
-			   progress.innerText = percentage;
+	
 			 }
 			);
 
@@ -82,8 +81,9 @@ let percentage;
 		
             function render() {
                 requestAnimationFrame(render);
+				progress.innerText = percentage;
+				console.log(percentage);
 
-			
                 renderer.render(scene, camera);
                 }
 render();      
