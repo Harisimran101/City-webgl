@@ -748,21 +748,10 @@
         },
         {
             "doubleSided" : true,
-            "name" : "BD_4.001",
-            "pbrMetallicRoughness" : {
-                "baseColorTexture" : {
-                    "index" : 29
-                },
-                "metallicFactor" : 0,
-                "roughnessFactor" : 0.5
-            }
-        },
-        {
-            "doubleSided" : true,
             "name" : "BD_7",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 30
+                    "index" : 29
                 },
                 "metallicFactor" : 0,
                 "roughnessFactor" : 0.5
@@ -786,7 +775,7 @@
             "name" : "bus stop",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 31
+                    "index" : 30
                 },
                 "metallicFactor" : 0,
                 "roughnessFactor" : 0.5
@@ -797,7 +786,7 @@
             "name" : "Vent",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 32
+                    "index" : 31
                 },
                 "metallicFactor" : 0,
                 "roughnessFactor" : 0.5
@@ -1264,7 +1253,7 @@
                         "TEXCOORD_0" : 156
                     },
                     "indices" : 157,
-                    "material" : 30
+                    "material" : 24
                 }
             ]
         },
@@ -1278,7 +1267,7 @@
                         "TEXCOORD_0" : 160
                     },
                     "indices" : 161,
-                    "material" : 31
+                    "material" : 30
                 }
             ]
         },
@@ -1292,7 +1281,7 @@
                         "TEXCOORD_0" : 164
                     },
                     "indices" : 165,
-                    "material" : 32
+                    "material" : 31
                 }
             ]
         },
@@ -1306,7 +1295,7 @@
                         "TEXCOORD_0" : 168
                     },
                     "indices" : 169,
-                    "material" : 33
+                    "material" : 32
                 }
             ]
         },
@@ -1320,7 +1309,7 @@
                         "TEXCOORD_0" : 172
                     },
                     "indices" : 173,
-                    "material" : 34
+                    "material" : 33
                 }
             ]
         }
@@ -1437,10 +1426,6 @@
         {
             "sampler" : 0,
             "source" : 22
-        },
-        {
-            "sampler" : 0,
-            "source" : 23
         },
         {
             "sampler" : 0,
@@ -1591,9 +1576,9 @@
             "uri" : "textures/bus%20stop.jpg"
         },
         {
-            "mimeType" : "image/png",
+            "mimeType" : "image/jpeg",
             "name" : "Untitled",
-            "uri" : "textures/Untitled.png"
+            "uri" : "textures/Untitled.jpg"
         }
     ],
     "accessors" : [
