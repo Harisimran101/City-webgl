@@ -10,7 +10,7 @@ const height = webgl.offsetHeight;
     		const scene = new THREE.Scene();
 
 //-- Camera			
-            const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+            const camera = new THREE.PerspectiveCamera( 55, window.innerWidth / window.innerHeight, 0.1, 1000 );
             scene.add( camera );
 			camera.position.set(5.3,2.5,3.9); 
 
