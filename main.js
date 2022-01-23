@@ -31,7 +31,7 @@ const height = webgl.offsetHeight;
 const pmremGenerator = new THREE.PMREMGenerator( renderer );
 
 scene.background = new THREE.Color( 0xeeeeee );
-scene.environment = pmremGenerator.fromScene( new RoomEnvironment() ).texture;
+
 
 
 //-- Screen Resize
@@ -55,7 +55,8 @@ window.addEventListener('resize', () =>{
 //-- Materials	
 
 //-- Lights 
-
+const light = new THREE.HemisphereLight( '#F7F7F7', '#F7F7F7', 1 );
+scene.add( light );
 
 //-- Objects 
 let percentage;
@@ -70,20 +71,13 @@ let percentage;
 	
                 scene.add(gallery);			  
         
-			},
-			 function(loading){
-				percentage = loading.loaded / loading.total * 100 ;
-	
-			 }
-			);
+			});
 
-	
+	console.log(renderer.capabilities.getMaxAnisotropy());
 		
             function render() {
                 requestAnimationFrame(render);
-				progress.innerText = percentage;
-				console.log(percentage);
-
+            
                 renderer.render(scene, camera);
                 }
 render();      
