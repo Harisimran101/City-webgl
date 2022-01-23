@@ -7,3 +7,15 @@
      left: 0;
      top: 0;
 }
+
+
+.preloader-wrapper {
+  z-index: 1000;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}

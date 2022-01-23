@@ -2,8 +2,10 @@ import { RGBELoader } from 'https://threejs.org/examples/jsm/loaders/RGBELoader.
 import { RoomEnvironment  } from 'https://threejs.org/examples/jsm/environments/RoomEnvironment.js';
 
 const webgl = document.querySelector('#webgl');
+const progress = document.querySelector('#progress');
 const width = webgl.offsetWidth;
 const height = webgl.offsetHeight;
+
 
 
 //-- Scene
@@ -56,6 +58,7 @@ window.addEventListener('resize', () =>{
 
 
 //-- Objects 
+let percentage;
 
 			let loader = new THREE.GLTFLoader();
             let gallery;
@@ -67,14 +70,19 @@ window.addEventListener('resize', () =>{
 	
                 scene.add(gallery);			  
         
-			});
+			},
+			 function(loading){
+				percentage = (loading.loaded / loading.total * 100 ) + '% loaded' ;
+			   progress.innerHTML = percentage;
+			 }
+			);
 
 	
 		
             function render() {
                 requestAnimationFrame(render);
 
-				  
+			
                 renderer.render(scene, camera);
                 }
 render();      
