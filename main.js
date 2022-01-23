@@ -4,39 +4,43 @@ import { FirstPersonControls } from 'https://threejs.org/examples/jsm/controls/F
 
 console.log(FirstPersonControls);
 
-const webgl = document.querySelector('#webgl');
-const progress = document.querySelector('#progress');
-const width = webgl.offsetWidth;
-const height = webgl.offsetHeight;
+
+var elem = document.documentElement;
+
 
 const clock = new THREE.Clock();
 
+fullscreen.addEventListener('click', () =>{
+	if(elem.requestFullscreen != true){
+	elem.requestFullscreen();
+	};
+});
 
 //-- Scene
     		const scene = new THREE.Scene();
 
 //-- Camera			
-            const camera = new THREE.PerspectiveCamera( 55, window.innerWidth / window.innerHeight, 0.1, 1000 );
+            const camera = new THREE.PerspectiveCamera( 55, window.innerWidth / window.innerHeight, 0.01, 10000 );
             scene.add( camera );
 			camera.position.set(5.3,2.5,3.9); 
 
 
 //--Renderer	
-			const renderer = new THREE.WebGLRenderer({ antialias: true, canvas: document.querySelector('#webgl')});
+			const renderer = new THREE.WebGLRenderer({ 
+				antialias: true, 
+				canvas: webgl,
+				logarithmicDepthBuffer: true ,
+			});
+
 			renderer.setSize( window.innerWidth,window.innerHeight);
 			renderer.setPixelRatio(window.devicePixelRatio /1.3);
 			renderer.outputEncoding = THREE.sRGBEncoding;
-
-			renderer.shadowMap.enabled = true;
-            renderer.shadowMap.type = THREE.PCFSoftShadowMap;			
 
 //-- Scene Background		
 
 const pmremGenerator = new THREE.PMREMGenerator( renderer );
 
 scene.background = new THREE.Color( 0xeeeeee );
-
-
 
 //-- Screen Resize
 window.addEventListener('resize', () =>{
@@ -65,9 +69,10 @@ window.addEventListener('resize', () =>{
 const light = new THREE.HemisphereLight( '#F7F7F7', '#F7F7F7', 1.5);
 scene.add( light );
 
-const directionalLight = new THREE.DirectionalLight( 0xffffff, 0.6 );
+const directionalLight = new THREE.DirectionalLight( 0xffffff,1);
 scene.add( directionalLight );
-directionalLight.position.set(0,4,0);
+directionalLight.position.set(0,7,0);
+
 
 //-- Objects 
 let percentage;
@@ -76,11 +81,11 @@ let percentage;
             let gallery;
  
 			loader.load('model/City.gltf', function(gltf){
+	            gallery = gltf.scene;	   
 				
-	            gallery = gltf.scene;
-	
-	
-                scene.add(gallery);			  
+                scene.add(gallery);		
+				
+				
         
 			});
 		
