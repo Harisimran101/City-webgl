@@ -10,14 +10,14 @@ const height = webgl.offsetHeight;
     		const scene = new THREE.Scene();
 
 //-- Camera			
-            const camera = new THREE.PerspectiveCamera( 75, width / height, 0.1, 1000 );
+            const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
             scene.add( camera );
 			camera.position.set(5.3,2.5,3.9); 
 
 
 //--Renderer	
 			const renderer = new THREE.WebGLRenderer({ antialias: true, canvas: document.querySelector('#webgl')});
-			renderer.setSize( width,height );
+			renderer.setSize( window.innerWidth,window.innerHeight);
 			renderer.setPixelRatio(window.devicePixelRatio /1.3);
 			renderer.outputEncoding = THREE.sRGBEncoding;
 
@@ -38,10 +38,10 @@ window.addEventListener('resize', () =>{
 });
 			function onWindowResize() {
 
-				camera.aspect = width / height;
+				camera.aspect = window.innerWidth / window.innerHeight;
 				camera.updateProjectionMatrix();
 	
-				renderer.setSize( width,height);
+				renderer.setSize( window.innerWidth,window.innerHeight);
 	
 			};
 
