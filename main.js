@@ -4,16 +4,27 @@ import { FirstPersonControls } from 'https://threejs.org/examples/jsm/controls/F
 
 console.log(FirstPersonControls);
 
+const webgl = document.querySelector('#webgl');
+const progress = document.querySelector('#progress');
+const fullscreen = document.querySelector('.fullscreen-btn');
+const fullicon = document.querySelector('screenicon')
+const width = webgl.offsetWidth;
+const height = webgl.offsetHeight;
 
-var elem = document.documentElement;
-
+var fullpage = document.documentElement;
+console.log(fullicon);
 
 const clock = new THREE.Clock();
 
 fullscreen.addEventListener('click', () =>{
-	if(elem.requestFullscreen != true){
-	elem.requestFullscreen();
-	};
+	if(fullpage.requestFullscreen != true){
+	fullpage.requestFullscreen();
+	fullicon.classList.replace('fa-expand', 'fa-compress');  
+	}
+
+	else {
+        
+	}
 });
 
 //-- Scene
@@ -33,7 +44,7 @@ fullscreen.addEventListener('click', () =>{
 			});
 
 			renderer.setSize( window.innerWidth,window.innerHeight);
-			renderer.setPixelRatio(window.devicePixelRatio /1.3);
+			renderer.setPixelRatio(window.devicePixelRatio / 1.3);
 			renderer.outputEncoding = THREE.sRGBEncoding;
 
 //-- Scene Background		
@@ -69,9 +80,7 @@ window.addEventListener('resize', () =>{
 const light = new THREE.HemisphereLight( '#F7F7F7', '#F7F7F7', 1.5);
 scene.add( light );
 
-const directionalLight = new THREE.DirectionalLight( 0xffffff,1);
-scene.add( directionalLight );
-directionalLight.position.set(0,7,0);
+
 
 
 //-- Objects 
